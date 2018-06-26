@@ -1,7 +1,7 @@
 spring:
   profiles:
-    active: dev
+    active: 
+  application:
+    name: ServiceProvider
 server:
-  port: 8081
-
-message: new file for git message
+  port: 8082

@@ -1,0 +1,16 @@
+server.port: 8081
+spring:
+    application:
+        name: eureka-service-config-center
+
+message: from dev branch message!
+
+eureka:
+  instance:
+    hostname: localhost
+  appname: eureka-service-config-center001
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8081/eureka/
