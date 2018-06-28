@@ -8,9 +8,12 @@ message: from dev branch message!
 eureka:
   instance:
     hostname: localhost
-  appname: eureka-serv-config-center
+    prefer-ip-address: true
+    metadataMap:
+      instanceId: ${spring.application.name}:${random.value}
+    appname: eureka-serv-config-center
   client:
     register-with-eureka: false
     fetch-registry: false
-    serviceUrl:
+    service-url:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka/

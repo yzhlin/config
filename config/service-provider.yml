@@ -8,9 +8,11 @@ server:
 eureka:
   instance:
     hostname: localhost
-  appname: eureka-serv-provider
+    prefer-ip-address: true
+    metadataMap:
+      instanceId: ${spring.application.name}:${random.value}
+    appname: serv-provider
   client:
-    register-with-eureka: false
-    fetch-registry: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+    eureka-server-connect-timeout-seconds: 10
