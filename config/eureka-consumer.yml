@@ -2,15 +2,15 @@ spring:
   profiles:
     active: 
   application:
-    name: ServiceProvider
+    name: EurekaConsumer
 server:
-  port: 8082
+  port: 8083
 eureka:
   instance:
     hostname: localhost
-  appname: eureka-serv-provider
+  appname: eureka-consumer
   client:
     register-with-eureka: false
     fetch-registry: false
-    service-url:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8081/eureka/

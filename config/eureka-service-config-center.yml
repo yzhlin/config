@@ -2,6 +2,6 @@ spring:
   profiles:
     active: dev
 server:
-  port: 8081
+  port: 8761
 
 message: new file for git message
