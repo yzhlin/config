@@ -1,6 +1,6 @@
 spring:
-    application:
-        name: service-config-center-node
+  application:
+    name: service-config-center-node
         
 message: from dev git message! node 02
 
