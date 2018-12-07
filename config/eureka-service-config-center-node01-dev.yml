@@ -20,7 +20,7 @@ eureka:
       instanceId: ${spring.application.name}:${random.value}
     appname: service-config-center-node
   client:
-    register-with-eureka: true
-    fetch-registry: true
+#    register-with-eureka: true
+#    fetch-registry: true
     service-url:
       defaultZone: http://scc:8761/eureka/,http://scc2:8763/eureka/
