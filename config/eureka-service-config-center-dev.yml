@@ -21,15 +21,15 @@ eureka:
   instance:
     hostname: scc
     instance-id: ${spring.application.name}:${server.port} #优先于metadataMap下的设置
-    prefer-ip-address: false
+    prefer-ip-address: false  #true会导致Eureka管理页面available-replicas为空，反而出现在了unavailable-replicas
     metadataMap:
       instanceId: ${spring.application.name}:${random.value}
     appname: service-config-center-node
-#    lease-renewal-interval-in-seconds: 30     #租期更新时间间隔，默认30s
-#    lease-expiration-duration-in-seconds: 30  #租期到期时间，默认90s
+    lease-renewal-interval-in-seconds: 30     #租期更新时间间隔，默认30s
+    lease-expiration-duration-in-seconds: 30  #租期到期时间，默认90s
   client:
-#    register-with-eureka: true
-#    fetch-registry: true
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
 #      defaultZone: http://scc:8761/eureka/
       defaultZone: http://scc1:8762/eureka/,http://scc2:8763/eureka/
