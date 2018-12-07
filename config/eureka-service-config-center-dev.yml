@@ -5,7 +5,7 @@ spring:
 #    user:
 #      name: abc
 #      password: 123456
-message: from dev git message!
+message: from dev git message! node 00
 
 server:
   port: 8761
