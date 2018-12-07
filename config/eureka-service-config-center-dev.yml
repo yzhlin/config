@@ -1,19 +1,36 @@
-server.port: 8761
 spring:
-    application:
-        name: eureka-service-config-center
-
+  application:
+    name: service-config-center-node
+#  security:
+#    user:
+#      name: abc
+#      password: 123456
 message: from dev branch message!
 
+server:
+  port: 8761
 eureka:
+  server:
+    enable-self-preservation: true    #设置为false，关闭自我保护(开启的时候，无效的服务不会被清理)
+    eviction-interval-timer-in-ms: 60000  #清理无效服务的时间间隔，这里设置1分钟
+  dashboard:
+    enabled: true   # 开启显示面板(默认开启)
+    path: /         # 设置面板访问路径，默认为'/'
+  datacenter: cloud # 云数据中心
+  environment: test # 当前环境为测试环境
   instance:
-    hostname: localhost
+    hostname: scc
+    instance-id: ${spring.application.name}:${server.port} #优先于metadataMap下的设置
     prefer-ip-address: true
     metadataMap:
       instanceId: ${spring.application.name}:${random.value}
     appname: eureka-serv-config-center
+    lease-renewal-interval-in-seconds: 30     #租期更新时间间隔，默认30s
+    lease-expiration-duration-in-seconds: 30  #租期到期时间，默认90s
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+#      defaultZone: http://scc:8761/eureka/
+      defaultZone: http://scc1:8762/eureka/,http://scc2:8763/eureka/
+#     defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/

@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: 
+  application:
+    name: RibbonServiceProvider
+server:
+  port: 8082
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+    metadataMap:
+      instanceId: ${spring.application.name}:${random.value}
+    appname: ${spring.application.name}
+    instance-id: ${spring.application.name}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+    eureka-server-connect-timeout-seconds: 10

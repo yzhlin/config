@@ -4,7 +4,7 @@ spring:
   application:
     name: ServiceProvider
 server:
-  port: 8082
+  port: 8080
 eureka:
   instance:
     hostname: localhost
@@ -12,7 +12,13 @@ eureka:
     metadataMap:
       instanceId: ${spring.application.name}:${random.value}
     appname: serv-provider
+    instance-id: ${spring.application.name}:${server.port}  #优先于metadataMap下的设置
+    lease-renewal-interval-in-seconds: 30    #Eureka心跳间隔默认30s
   client:
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://scc:8761/eureka/
+#      defaultZone: http://scc:8761/eureka/,http://scc1:8762/eureka/,http://scc2:8763/eureka/
     eureka-server-connect-timeout-seconds: 10
+    
+prop:
+  change: provider01

@@ -1,0 +1,25 @@
+spring:
+    application:
+        name: service-config-center-node
+        
+message: from dev branch message!
+
+server:
+  port: 8762
+eureka:
+  dashboard:
+    enabled: false   # 开启显示面板(默认开启)
+    path: /         # 设置面板访问路径，默认为'/'
+  datacenter: cloud # 云数据中心
+  environment: test # 当前环境为测试环境
+  instance:
+    hostname: scc1
+    prefer-ip-address: true
+    metadataMap:
+      instanceId: ${spring.application.name}:${random.value}
+    appname: eureka-serv-config-center
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://scc:8761/eureka/,http://scc2:8763/eureka/

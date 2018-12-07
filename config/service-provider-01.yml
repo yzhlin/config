@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: 
+  application:
+    name: ServiceProvider
+server:
+  port: 8081
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+    metadataMap:
+      instanceId: ${spring.application.name}:${random.value}
+    appname: serv-provider
+    instance-id: ${spring.application.name}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://scc:8761/eureka/,http://scc1:8762/eureka/,http://scc2:8763/eureka/
+    eureka-server-connect-timeout-seconds: 10

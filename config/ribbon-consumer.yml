@@ -2,13 +2,13 @@ spring:
   profiles:
     active: 
   application:
-    name: EurekaConsumer
+    name: RibbonConsumer
 server:
-  port: 8090
+  port: 8091
 eureka:
   instance:
     hostname: localhost
-  appname: eureka-consumer
+    appname: ribbon-consumer
   client:
     register-with-eureka: false
     fetch-registry: true
