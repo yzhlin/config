@@ -24,7 +24,7 @@ eureka:
     prefer-ip-address: true
     metadataMap:
       instanceId: ${spring.application.name}:${random.value}
-    appname: eureka-serv-config-center
+    appname: service-config-center-node
     lease-renewal-interval-in-seconds: 30     #租期更新时间间隔，默认30s
     lease-expiration-duration-in-seconds: 30  #租期到期时间，默认90s
   client:
