@@ -21,4 +21,4 @@ eureka:
     eureka-server-connect-timeout-seconds: 10
     
 prop:
-  change: provider01
+  change: provider01 change
