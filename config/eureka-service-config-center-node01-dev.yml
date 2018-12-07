@@ -2,7 +2,7 @@ spring:
     application:
         name: service-config-center-node
         
-message: from dev branch message!
+message: from dev git message! at node 01
 
 server:
   port: 8762
