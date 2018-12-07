@@ -15,7 +15,7 @@ eureka:
   instance:
     hostname: scc1
     instance-id: ${spring.application.name}:${server.port} #优先于metadataMap下的设置
-    prefer-ip-address: true
+    prefer-ip-address: false
     metadataMap:
       instanceId: ${spring.application.name}:${random.value}
     appname: service-config-center-node
