@@ -28,8 +28,8 @@ eureka:
 #    lease-renewal-interval-in-seconds: 30     #租期更新时间间隔，默认30s
 #    lease-expiration-duration-in-seconds: 30  #租期到期时间，默认90s
   client:
-    register-with-eureka: true
-    fetch-registry: true
+#    register-with-eureka: true
+#    fetch-registry: true
     service-url:
 #      defaultZone: http://scc:8761/eureka/
       defaultZone: http://scc1:8762/eureka/,http://scc2:8763/eureka/
