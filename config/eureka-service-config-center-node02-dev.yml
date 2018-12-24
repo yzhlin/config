@@ -11,7 +11,7 @@ eureka:
     enable-self-preservation: true    #设置为false，关闭自我保护(开启的时候，无效的服务不会被清理)
     eviction-interval-timer-in-ms: 60000  #清理无效服务的时间间隔，这里设置1分钟
   dashboard:
-    enabled: false   # 开启显示面板(默认开启)
+    enabled: true   # 开启显示面板(默认开启)
     path: /         # 设置面板访问路径，默认为'/'
   datacenter: cloud # 云数据中心
   environment: test # 当前环境为测试环境
