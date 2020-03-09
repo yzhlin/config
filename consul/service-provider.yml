@@ -4,3 +4,8 @@ server:
 spring:
   application:
     name: consul-serv-01
+
+springcloud:
+  bus:
+    update-properties:
+      msg: "changed by 2020-03-09"
