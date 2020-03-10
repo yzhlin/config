@@ -3,9 +3,9 @@ server:
 
 spring:
   application:
-    name: consul-serv-01
+    name: service-provider
 
 springcloud:
   bus:
     update-properties:
-      msg: "changed by 2020-03-10 14:42"
+      msg: "changed by 2020-03-10 15:02"
