@@ -1,5 +1,6 @@
-server:
-  port: 8090
+#单机测试需要不同端口，分布式发布可以相同端口
+#server:
+#  port: 8090
 
 spring:
   application:
@@ -8,4 +9,4 @@ spring:
 springcloud:
   bus:
     update-properties:
-      msg: "changed by 2020-03-10 15:02"
+      msg: "changed by 2020-03-10 15:23"
