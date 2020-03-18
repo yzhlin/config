@@ -9,7 +9,7 @@ spring:
 springcloud:
   bus:
     update-properties:
-      msg: "changed by 2020-03-17 23:37"
+      msg: "changed by 2020-03-18 09:41"
 
 address:
   city-name: GuangZHou
